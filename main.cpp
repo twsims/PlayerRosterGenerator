@@ -39,7 +39,7 @@ int main() {
         switch (choice) {
         case 1: {
             // Add a player to the roster if there's space (maximum 15 players)
-            if (roster.size() <= 15) {
+            if (roster.size() < 15) {
                 string playerName;
                 cout << "Enter player name: ";
                 cin.ignore();

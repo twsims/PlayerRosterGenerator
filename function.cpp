@@ -28,19 +28,19 @@ void displayRoster(const vector<string>& roster) {
     }
 }
 
-// This function displays all the generated 5-player lineups
+// This function displays all the generated 5-player Starters
 void displayCombinations(const vector<vector<string>*>& allCombinations) {
-    cout << "\nGenerated Starting 5 Lineups:" << endl;
+    cout << "\nGenerated Starting 5s :" << endl;
     for (int i = 0; i < allCombinations.size(); ++i) {
         cout << "Lineup " << i + 1 << ": ";
         for (const string& player : *allCombinations[i]) {
-            cout << player << " "; // Display each player's name in the lineup
+            cout << player << " "; // Display each player's name in the starting 5
         }
         cout << endl;
     }
 }
 
-// This function frees the memory used to store the lineups
+// This function frees the memory used to store the starters
 void freeCombinations(vector<vector<string>*>& allCombinations) {
     for (auto combination : allCombinations) {
         delete combination; // Free the memory allocated for each combination
