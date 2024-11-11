@@ -10,11 +10,12 @@ lineups as my younger group requires all players to start at least once in the s
 Time estimation I don't expect this to take as long I have to figure out the syntax of C++ for vectors as I used something similiar
 in python for our program.  I wanted to try  my hand at creating it in C++ since I am not as familiar.  
 Total estimate is roughly 6-10 hours and unfortunately it took longer more like 12-14 hours as I did not fully understand chapter 11 and chapter 17 to 
-properly implement all the features I wanted.  I did work with a C++ tutor to fine tune my recursive function for generating the starting lineup
+properly implement all the features I wanted.  I did work with a C++ tutor to fine tune my recursive function for generating the starting rosters.
 
 */
 #include <iostream>
 #include "functions.h"
+#include <limits>
 
 using namespace std;
 
@@ -35,6 +36,15 @@ int main() {
         cout << "Enter your choice: ";
         cin >> choice;
 
+        //check if correct data type is selected
+        if (cin.fail() ) {
+            //This will clear the error state
+            cin.clear();
+            //Ignore the bad selection until the new line
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "\nBad selection. Please enter a number between 1 and 4." << endl;
+            continue; //Skip the rest of the loop to prompt again
+        }
         // Perform actions based on the user's choice
         switch (choice) {
         case 1: {
